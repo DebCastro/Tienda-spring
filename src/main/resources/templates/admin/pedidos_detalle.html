@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div th:insert="fragments/general.html :: menu"></div>
+<div style="text-align: center; font-size: 1.5rem;">Detalles del pedido</div> 
+
+<div style="font-weight: bold;">Datos de envio:</div>
+nombre: <span th:text="${pedido.nombreCompleto}"></span> <br>
+direccion: <span th:text="${pedido.direccion}"></span>  <br>
+provincia: <span th:text="${pedido.provincia}"></span>  <br>
+email: <span th:text="${pedido.email}"></span>  <br>
+codigo postal: <span th:text="${pedido.codigoPostal}"></span>  <br>
+
+<br>
+
+<div style="font-weight: bold;">Datos de pago</div>
+tipo de tarjeta: <span th:text="${pedido.tipoTarjeta}"></span><br>
+titular: <span th:text="${pedido.titularTarjeta}"></span><br>
+numero de tarjeta: <span th:text="${pedido.numeroTarjeta}"></span> <br>
+expiracion: <span th:text="${pedido.expiracion}"></span><br>
+cvv: <span th:text="${pedido.cvv}"></span> <br>
+
+<br>
+
+<div style="font-weight: bold;">Datos extra</div>
+telefono de contacto: <span th:text="${pedido.telefono}"></span><br>
+codigo de descuento: <span th:text="${pedido.codigo_descuento}"></span><br>
+
+<br>
+<div style="font-weight: bold;">Productos del pedido</div>
+<div th:each="productoPedido : ${pedido.productosPedido}">
+	nombre: <span th:text="${productoPedido.articulo.nombre}"></span><br>
+	precio/unidad: <span th:text="${productoPedido.articulo.precio}"></span><br>
+	cantidad: <span th:text="${productoPedido.cantidad}"></span><br>
+</div>
+
+<br>
+
+<div style="font-weight: bold;">Estados del pedido</div>
+<input type="hidden" id="id_pedido" th:field="${pedido.id}"/>
+<select id="select_estado" th:field="${pedido.estado}">
+		<option th:each="e : ${estados}" th:text="${e}" th:value="${e}"/> <!--th:each="c : ${estados}" estrados el del model en el controller de pedidos-->		
+</select>
+<script src="../librerias_js/jquery.js"></script>
+<script>
+	$("#select_estado").change(function(e) {
+		let estado = $("#select_estado").find(":selected").val();
+		let idPedido = $("#id_pedido").val();
+		alert("estado: " + estado + " para la id de pedido: " + idPedido);
+		$.post("servicioWebPedidos/actualizarEstadoPedido", {
+			id: idPedido,
+			estado: estado
+		}).done(function(res) {
+			if(res != "ok") {
+				alert(res);
+			}
+		});//end done
+	});//end change
+</script>
+
+
+</body>
+</html>

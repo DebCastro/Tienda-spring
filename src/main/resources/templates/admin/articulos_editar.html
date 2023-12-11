@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div th:insert="fragments/general.html :: menu"></div>
+Introduce los datos a editar del articulo:
+<form action="#" th:action="guardarCambiosArticulo" th:object="${articuloEditar}" method="post" enctype="multipart/form-data"> <!--lo que esta en el action es la ruta, esto es el objeto que va a recibir th:object="${nuevoArticulo} Esto a Controller articulo-->
+	nombre: <input type="text" th:field="*{nombre}"/> <br> <!--th:field="*{nombre}" esto es como se llama en la clase -->
+	<span style="color: red;" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" ></span><br>
+	
+	precio: <input type="number" step=".01" th:field="*{precio}"/> <br>
+	<span style="color: red;" th:if="${#fields.hasErrors('precio')}" th:errors="*{precio}" ></span><br>
+	
+	color: <input type="text" th:field="*{color}"/> <br> 
+	<span style="color: red;" th:if="${#fields.hasErrors('color')}" th:errors="*{color}" ></span><br>
+	estancia: <input type="text" th:field="*{estancia}"/> <br> 
+	<span style="color: red;" th:if="${#fields.hasErrors('estancia')}" th:errors="*{estancia}" ></span><br>
+	
+	categoria: <select th:field="*{idCategoria}"> <!--Esto sale de categoria -->
+					<option th:each="c : ${categorias}" th:text="${c.nombre}" th:value="${c.id}"/> <!--esto es asi por lo de registrar articulo en Controller -->
+				</select><br>
+	portada: <input type="file" th:field="*{fotoSubida}"/><br>
+	<input type="hidden" th:field="*{id}"/>
+	<input type="submit" value="Editar Articulo"/>
+</form>
+</body>
+</html>

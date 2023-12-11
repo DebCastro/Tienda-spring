@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	
+<div th:insert="fragments/general.html :: menu"></div>
+
+<br>
+<a href="registrarUsuario" style="font-size: 1.5rem; margin: 15px;">Crear un nuevo usuario</a>
+<br>
+
+<div th:each="usuario : ${info}" style="margin: 20px">
+            nombre: <span th:text="${usuario.nombre}"></span> <br>
+            <img height="80px" th:src="@{${'../mostrar_imagen_usuario?id=' + usuario.id }}" /> <br/>
+            apellido: <span th:text="${usuario.apellido}"></span> <br>
+            email: <span th:text="${usuario.email}"></span> <br>
+			<a th:href="@{${ 'borrarUsuario?id=' + usuario.id }}" onclick="return confirm('¿seguro?')">borrar</a>
+			<a th:href="@{${ 'editarUsuario?id=' + usuario.id }}">editar</a>
+
+</div>
+
+</body>
+</html>

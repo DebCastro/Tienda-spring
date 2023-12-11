@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Jost&family=Playfair+Display&display=swap');
+body{
+    background-color: #bebebe;
+}
+.form {
+    font-family: 'Jost', sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 20px;
+    gap: 10px;
+    max-width: 350px;
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  .title {
+    font-size: 28px;
+    color: #2b2a2a;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    margin: 0;
+  }
+  
+  .title::before,.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: #424242;
+  }
+  
+  .title::before {
+    width: 18px;
+    height: 18px;
+    background-color: #2b2a2a;
+  }
+  
+  .title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+  }
+
+  
+  .flex {
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+  }
+  
+  .form label {
+    position: relative;
+  }
+  
+  .form label .input {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+  }
+  
+  .form label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,.form label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .form label .input:valid + span {
+    color: rgb(4, 73, 90);
+  }
+  
+  .submit {
+    border: none;
+    outline: none;
+    background-color: #2b2a2a;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+  }
+  
+  .submit:hover {
+    background-color: #070707;
+  }
+  
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }

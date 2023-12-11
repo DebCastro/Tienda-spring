@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Jost&family=Playfair+Display&display=swap');
+body{
+    font-family: 'Jost', sans-serif;
+}
+
+.ini_buscador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin-top: 30px;
+}
+
+.info{
+    font-size: 2rem;
+    margin: 0;
+    align-self: flex-start; 
+    margin-left: 20px;
+}
+
+.buscador {
+    display: flex;
+    align-items: center;
+}
+#nombre_buscador{
+	margin-right: 20px;
+}
+.paginacion{
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.img_articulos{
+    height: 400px;
+    width: 270px;
+}
+.listado{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-content: space-between;
+	flex-direction: row;
+	gap: 3rem;
+	align-items: center;
+}
+.articuloListar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.articuloListarEnlaces{
+    display: flex;
+    gap: 1rem;
+}
+.enlace_ver_detalles_articulo, .enlace_comprar_listado_principal{
+    color: rgb(49, 48, 48);
+    text-decoration: none;
+    font-weight: bold; 
+    flex-direction: row;
+}
+a:hover{
+    font-weight: 500;  
+}
+#nombre_buscador{
+	padding: 0.6rem;
+	margin-right: 0.5rem;
+}
+
+.paginacion a{
+	color: rgb(49, 48, 48);
+    text-decoration: none;
+    font-weight: 500; 
+}
+.paginacion a:hover{
+	text-decoration: none;
+	font-weight: bold;
+}
+

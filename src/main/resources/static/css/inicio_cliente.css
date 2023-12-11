@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Jost&family=Playfair+Display&display=swap');
+
+body{
+    font-family: 'Jost', sans-serif;
+}
+
+.nameTienda{
+    font-family: 'Jost', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    margin: 0;
+}
+
+.container1 a{
+    color: rgb(49, 48, 48);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0;
+}
+
+.container1 a:hover{
+    font-weight: 500;
+}
+
+#mensaje_login{
+    margin: 0;
+    margin-left: auto; 
+}
+
+.container1{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.enlaces{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.enlaces a:not(:last-child)::after{
+    content: " | ";
+    margin: 0 5px;
+}
+
+.enlaces a{
+    color: rgb(49, 48, 48);
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0;
+}
+.enlaces a:hover{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+

@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Jost&family=Playfair+Display&display=swap');
+body{
+    background-color: #bebebe;
+    font-family: 'Jost', sans-serif;
+}
+#img_resumen{
+    height: 170px;
+    border-radius: 20px;
+}
+.title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1a202c;
+  }
+.sub_title{
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #1a202c;
+    font-weight: 700; 
+}
+#productos_pedido{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+.resumen{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-left: 20px;
+    gap: 1rem;
+}
+.pago, .envio, .extra{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+.articulos_total{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.articulos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+.separador{
+    height: 170px;
+    background-color: #2b2a2a;
+    width: 2px;
+}
+#boton_confirmar_pedido {
+    border: none;
+    outline: none;
+    background-color: #2b2a2a;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+  }
+  
+#boton_confirmar_pedido:hover {
+    background-color: #070707;
+  }

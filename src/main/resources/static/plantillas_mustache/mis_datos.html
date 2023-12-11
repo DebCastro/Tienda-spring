@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/mis_datos.css">
+    <title>Document</title>
+</head>
+<body>
+    {{#.}}
+	<div class="card">
+        <!--src="mostrar_imagen_usuario?id={{id}}"-->
+        <img src="mostrar_imagen_usuario?id={{id}}" class="svg"/>
+        <div class="card__content">
+            <span class="card__title">{{nombre}}</span>
+            <span class="card__description">{{apellido}}</span><br>
+            <span class="card__description">{{email}}</span><br>
+        </div>
+       <!--<a href="#" class="enlace_editar_mis_datos" id-usuario="{{id}}">editar</a>--> 
+        <input type="hidden" {{id}}>
+	</div>
+	{{/.}}
+    
+      
+</body>
+</html>

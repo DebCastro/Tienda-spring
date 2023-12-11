@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div th:insert="fragments/general.html :: menu"></div>
+
+Modifica los datos del usuario: <br>
+
+<form action="#" th:action="guardarCambiosUsuario" th:object="${usuarioEditar}" method="post" enctype="multipart/form-data">
+
+        nombre: <input type="text" th:field="*{nombre}"></input><br>
+        <span style="color: red;" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" ></span><br>
+        
+        apellido: <input type="text" th:field="*{apellido}"> <br>
+        <span style="color: red;" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}" ></span><br>
+        
+        email: <input type="text" th:field="*{email}"> <br>
+        <span style="color: red;" th:if="${#fields.hasErrors('email')}" th:errors="*{email}" ></span><br>
+        <input type="hidden" th:field="*{id}" />
+        <input type="hidden" th:field="*{pass}"> <br>
+        <br/>
+	  	 <br/>
+	    imagen nueva: <input type="file" th:field="*{fotoSubida}">
+	    <br/>
+	    
+        <input type="submit" value="GUARDAR CAMBIOS">
+
+</form>
+
+</body>
+</html>

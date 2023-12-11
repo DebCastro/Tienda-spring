@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	
+<div th:insert="fragments/general.html :: menu"></div>
+
+introduce los datos de la nueva categoria:
+
+<form action="#" th:action="guardarCategoria" th:object="${nuevaCategoria}" method="post" enctype="multipart/form-data">
+	nombre: <input type="text" th:field="*{nombre}" /> <br>
+	  <span style="color: red;" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" ></span><br>
+	  
+	descripcion: <br> <textarea rows="3" cols="20" th:field="*{descripcion}"></textarea> <br>
+	 <span style="color: red;" th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}" ></span><br>
+	<input type="submit" value="REGISTRAR CATEGORIA" />
+</form>
+
+</body>
+</html>

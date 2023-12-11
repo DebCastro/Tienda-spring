@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div th:insert="fragments/general.html :: menu"></div>
+
+<a href="registrarCategoria" style="font-size: 1.5rem; margin: 15px;">Registrar una nueva categoria</a> <br>
+
+<div th:each="categoria : ${categorias}" style="margin: 15px;">
+	nombre: <span th:text="${categoria.nombre}"></span> <br>
+	descripcion: <span th:text="${categoria.descripcion}"></span> <br>
+	<a th:href="@{${ 'borrarCategoria?id=' + categoria.id }}" onclick="return confirm('¿seguro?')" >borrar</a> 
+	<a th:href="@{${ 'editarCategoria?id=' + categoria.id }}" >editar</a>
+</div>
+</body>
+</html>

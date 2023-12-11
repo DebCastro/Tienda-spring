@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/check_out_3.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="resumen">
+        <span class="title">Detalles del pedido</span>
+    <div class="total_articulos">
+        <span class="sub_title">Total de artículos</span>
+        <div id="productos_pedido">
+            {{#articulos}}
+                <div class="articulos_total">
+                    <!--src="mostrar_imagen?id={{articulo_id}}"-->
+                    <img src="mostrar_imagen?id={{articulo_id}}" id="img_resumen"/>  <!--se pone libro_id porque es como lo tenemos en las constantes SQL en obtener productos carrito -->
+                    <div class="articulos">
+                        <span>{{nombre}} </span>
+                        <span>{{precio_articulo}}</span>
+                        <div>
+                            <span>Cantidad: </span>
+                            <span>{{cantidad}}</span>
+                        </div>
+                    </div>
+                    <div class="separador"></div>
+                </div>
+            {{/articulos}}	
+        </div>
+    </div>
+
+    <div >
+        <span class="sub_title">Dirección de envío</span>
+        <div class="envio">
+            <span>{{nombreCompleto}} </span><!--Se pone asi como en la clase de Resumen pedido -->
+            <span>{{email}}</span>
+            <span>{{direccion}}</span>
+            <span>{{provincia}}</span>
+            <span>{{codigoPostal}}</span>	
+        </div>
+    </div> 
+
+    <div >
+        <span class="sub_title">Forma de pago</span>
+        <div class="pago">
+            <span>{{titularTarjeta}} </span>
+            <span>{{numeroTarjeta}} </span>
+            <span>{{tipoTarjeta}} </span>
+            <span>{{expiracion}} </span>
+            <span>{{cvv}} </span>
+        </div>
+    </div> 
+   
+
+    <div >
+        <span class="sub_title">Más información</span>
+        <div class="extra">
+            <div>
+                <span>Teléfono:</span>
+                <span>{{telefono}}</span>
+            </div>
+            <div>
+                <span>Código de descuento:</span>
+                <span>{{codigo_descuento}}</span> 
+            </div>   
+        </div>
+    </div> 
+
+    <div>
+        <button id="boton_confirmar_pedido">Realizar pedido</button>
+    </div>
+
+    </div>  
+</body>
+</html>

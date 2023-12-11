@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div th:insert="fragments/general.html :: menu"></div>
+
+<form action="obtenerArticulos" style="text-align: right; margin-right: 20px;">
+	Buscador: <input type="text" name="nombre" th:value="${nombre}"/>
+	<input type="submit" value="BUSCAR"/>
+</form>
+
+<div style="text-align: right; font-size: 1.1em; margin-right: 20px;">
+	<a th:if="${anterior >= 0}"th:href="@{${ 'obtenerArticulos?comienzo=' + anterior + '&nombre=' + nombre}}">Anterior</a>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<a th:if="${siguiente < total}"th:href="@{${ 'obtenerArticulos?comienzo=' + siguiente + '&nombre=' + nombre}}">Siguiente</a>
+</div>
+<div style="text-align: right; margin-right: 20px;">
+	Total resultados:<span th:text="${total}"></span>
+</div>
+<br>
+<a href="registrarArticulo" style="font-size: 1.5rem; margin: 15px;">Registrar un nuevo articulo</a>
+
+<div th:each="articulo : ${articulos}" style="margin: 15px;"> <!-- Esto es como lo llamas en model en el controller en obtenerArticulos, lo de dentro de las comillas es lo de dentro de las llaves-->
+	nombre: <span th:text="${articulo.nombre}" style="font-size: 1.2rem; font-weight: bold;"></span> <br><!--th:text="${articulo.nombre} esto es como se pone en la clase -->
+	precio: <span th:text="${articulo.precio}"></span> €<br>
+	color: <span th:text="${articulo.color}"></span> <br>
+	estancia: <span th:text="${articulo.estancia}"></span> <br>
+	categoria: <span th:text="${articulo.categoria.nombre}"></span> <br>
+	portada: <br>
+	<img height="100px" th:src="@{${'../mostrar_imagen?id=' + articulo.id}}"><br>
+	<a th:href="@{${ 'borrarArticulo?id=' + articulo.id }}" onclick="return confirm('¿seguro?')" >borrar</a> 
+	<a th:href="@{${ 'editarArticulo?id=' + articulo.id }}" >modificar</a>
+</div>
+</body>
+</html>

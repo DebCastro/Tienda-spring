@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/articulos.css">
+    <title>Articulos</title>
+</head>
+<body>
+<div class="ini_buscador">
+	<p class="info">Hogar y estilo de vida</p>
+	<div class="buscador">
+		<img src="../imagenes_recursos/busqueda.png" height="50px" width="50px"/>
+		<input type="text" id="nombre_buscador"/> <!--la id va a javascript de funciones menu -->
+	</div>
+</div>
+<div class="paginacion">
+	<a id="enlace_anterior" href="#">Anterior</a> <a id="enlace_siguiente" href="#">Siguiente</a><br>
+	Resultados: <span id="total_resultados"></span>
+</div>
+<!-- lo siguiente es la forma de indicar a mustache de que haga
+lo indicado con cada elemento de un array que vamos a darle -->
+<div class="listado">
+{{#.}}
+<div class="articuloListar">
+	<img src="mostrar_imagen?id={{id}}" class="img_articulos"/>
+	<span>{{nombre}}</span> 
+	<span>{{precio}} &euro; <span>{{color}}</span> </span>
+	<div class="articuloListarEnlaces">
+		<a href="#" class="enlace_ver_detalles_articulo" id-producto="{{id}}">Ver detalles</a>
+		<a href="#" class="enlace_comprar_listado_principal" id-producto="{{id}}">Comprar</a>
+	</div>
+</div>
+{{/.}}
+</div>
+</body>
+</html>

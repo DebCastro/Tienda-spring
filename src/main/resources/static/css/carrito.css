@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Jost&family=Playfair+Display&display=swap');
+
+.img_carrito{
+    height: 170px;
+    border-radius: 20px;
+}
+.carrito{
+    font-family: 'Jost', sans-serif;
+    border-radius: 30px;
+    border: 3px solid #bebebe;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 20px;
+    gap: 2rem;
+    width: 80%;
+}
+.articulo_compra{
+    display: flex;
+    flex-direction: row;
+}
+.datos{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.enlace_cantidad_producto_carrito{
+	 font-family: 'Jost', sans-serif;
+	 padding: 0.7rem;
+}
+.enlace_borrar_producto_carrito{
+    color: rgb(49, 48, 48);
+    text-decoration: none;
+    font-weight: bold; 
+    flex-direction: row;
+}
+.enlace_borrar_producto_carrito:hover{
+    font-weight: 500;  
+}
+.comprar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#realizar_pedido{
+    background-color: #2b2a2a;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+#realizar_pedido:hover{
+    background-color: #0a0a0a;
+}

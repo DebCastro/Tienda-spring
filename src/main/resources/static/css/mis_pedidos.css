@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Jost&family=Playfair+Display&display=swap');
+.info_mis_pedidos{
+    font-family: 'Jost', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 0.5rem;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.num_pedido{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+.estado_pedido{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.separador{
+    height: 2px;
+    margin-right: 20px;
+    background-color: #2b2a2a;
+}
+
+.enlace_ver_detalles_mis_pedidos{
+    color: rgb(49, 48, 48);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0;
+}
+.enlace_ver_detalles_mis_pedidos:hover{
+    font-weight: 500;
+}

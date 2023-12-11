@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/detalle_articulo.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="info_articulo">
+        <!--src="mostrar_imagen?id={{id}}" -->
+        <img src="mostrar_imagen?id={{id}}" alt="imagen producto" class="img_detalle"/>
+        <div class="datos_articulo">
+            <span class="title">{{nombre}}</span>
+            <div class="info">
+                <span>{{precio}} &euro;</span>
+                <div class="separador"></div>
+                <span>Categoria: {{categoria}}</span>
+                <span>Color: {{color}}</span>
+                <span>Estancia: {{estancia}}</span>
+            </div>
+           <div class="enlace_comprar_detalle">
+                <a href="#" class="enlace_comprar_listado_principal" id-producto="{{id}}">Comprar</a>	
+            </div> 
+        </div>
+    </div>
+    <!--
+		<div>
+        <a id-producto="{{id}}" href="#" class="enlace_escribir_reseña">Escribe aqui tu reseña</a>
+        
+    </div>
+    <div>
+        Valoraciones Articulo:
+        {{#.}}
+        <div class="valoracionesListar">
+        <span>{{titulo}}</span> <br>
+        <span>{{descripcion}}</span><br>
+        <i class="fa-brands fa-gratipay" style="color: #fdb4ca;"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" height="32px" width="32px" viewBox="0 0 496 512"><path fill="#fdb4ca" d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm114.6 226.4l-113 152.7-112.7-152.7c-8.7-11.9-19.1-50.4 13.6-72 28.1-18.1 54.6-4.2 68.5 11.9 15.9 17.9 46.6 16.9 61.7 0 13.9-16.1 40.4-30 68.1-11.9 32.9 21.6 22.6 60 13.8 72z"/></svg>
+        <span>{{contador}}</span>
+        </div>
+        {{/.}}
+    </div> 
+		
+	-->  
+</body>
+</html>

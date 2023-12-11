@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div th:fragment="menu"> <!--th:fragment="menu" esto va a -->
+	<div>
+		<a href="../">Volver a la parte cliente</a>
+	</div>
+	<div style="text-align: center; font-size: 2em; background-color: lightpink;">
+		<span th:text="#{titulo.bienvenida}"></span>
+	</div>
+	<!--
+		<div>
+			<a href="?idioma=es">Español</a>
+			<a href="?idioma=en">Ingles</a>
+		</div>
+	 -->
+	<div style="text-align: center; margin-top: 20px;  font-size: 1.2em">
+		<a href="obtenerArticulos" style="margin-right: 10px;">Gestionar Articulos</a> <!--obtenerArticulos esto es controllerArticulo -->
+		<a href="obtenerCategorias" style="margin-right: 10px;">Gestionar Categorias</a>
+		<a href="obtenerUsuarios" style="margin-right: 10px;">Gestionar Usuarios</a>
+		<a href="obtenerPedidos" style="margin-right: 10px;">Gestionar Pedidos</a>
+		<a href="../logoutAdmin">Cerrar sesion</a>	
+	</div>
+</div>
+</body>
+</html>

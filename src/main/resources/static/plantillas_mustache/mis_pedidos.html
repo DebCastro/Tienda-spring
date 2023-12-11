@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/mis_pedidos.css">
+    <title>Document</title>
+</head>
+<body>
+    {{#.}}
+	<div class="info_mis_pedidos"> 
+        <div class="num_pedido">
+            <span>Número de pedido: </span>
+		    <span>{{id}}</span>
+        </div>
+        <div class="estado_pedido">
+            <span>Estado: </span>
+		    <span>{{estado}}</span>
+        </div>
+		<a href="#" class="enlace_ver_detalles_mis_pedidos" id-pedido="{{id}}">ver detalles pedido</a> 
+        <div class="separador"></div>
+	</div>
+    {{/.}}
+</body>
+</html>
